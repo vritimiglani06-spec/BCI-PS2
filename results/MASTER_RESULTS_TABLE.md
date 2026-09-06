@@ -1,4 +1,4 @@
-# Master Replication Results Table
+# Replication Results Table
 
 | Experiment / Configuration | Metric | Accuracy (Mean ± Std) | Baseline Delta |
 | :--- | :--- | :--- | :--- |
