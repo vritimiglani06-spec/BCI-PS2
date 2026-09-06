@@ -5,16 +5,18 @@ import torch.nn as nn
 
 
 class SharedFeatureExtractor(nn.Module):
-    def __init__(self, input_dim: int, hidden_dim: int = 128, output_dim: int = 64, slope: float = 0.01):
+    def __init__(self, input_dim: int, hidden_dim: int = 256, output_dim: int = 64, slope: float = 0.01):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(input_dim, hidden_dim),
             nn.LeakyReLU(slope),
-            nn.Linear(hidden_dim, output_dim),
+            nn.Linear(hidden_dim, 128),
+            nn.LeakyReLU(slope),
+            nn.Linear(128, output_dim),
             nn.LeakyReLU(slope),
         )
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x):
         return self.net(x)
 
 
@@ -39,7 +41,7 @@ class ASJDA(nn.Module):
         input_dim: int,
         num_classes: int,
         num_sources: int,
-        shared_hidden: int = 128,
+        shared_hidden: int = 256,
         shared_dim: int = 64,
         specific_dim: int = 32,
         slope: float = 0.01,
