@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Datasets
+*.dat
+*.zip
+*.rar
+*.mat
+
+# Experiment outputs
+runs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
