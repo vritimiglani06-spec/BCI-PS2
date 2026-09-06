@@ -1,0 +1,28 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data and Artifacts (Never push large binaries)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# PyTorch Model Checkpoints
+checkpoints/*.pt
+
+# Conda / Virtual Environments
+.conda/
+env/
+venv/
+asjda_repl/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS artifacts
+Thumbs.db
+Desktop.ini
+.DS_Store
