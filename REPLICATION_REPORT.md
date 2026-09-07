@@ -20,7 +20,7 @@ This report documents an independent, clean-room replication and methodological 
 - **Source Selection Mechanism:** Principal Component Analysis (10 components) and 20-bin histogram estimation were used to establish pairwise Jensen-Shannon Divergence (JSD). Adaptive thresholds $t$ were calibrated per fold using a target-free pseudo-target heuristic.
 - **Dynamic Loss Weighting Schedule:** Implemented according to Equation 14 of the published paper:
 
-$$\alpha = \frac{2}{1 + \exp\!\left(-10 \cdot \frac{\text{epoch}}{\text{total\_epochs}}\right)} - 1, \qquad \beta = \frac{\alpha}{100}, \qquad \gamma = \alpha - 1$$
+$$\alpha = \frac{2}{1 + \exp\!\left(-10 \cdot \frac{\text{epoch}}{\text{total_epochs}}\right)} - 1, \qquad \beta = \frac{\alpha}{100}, \qquad \gamma = \alpha - 1$$
 
 $$\mathcal{L} = \mathcal{L}_{cls} + \alpha \mathcal{L}_{mmd} + \beta \mathcal{L}_{disc} + \gamma \mathcal{L}_{lsd}$$
 
